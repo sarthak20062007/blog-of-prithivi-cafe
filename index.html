@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Where the Curtain Meets the Kitchen: Prithvi Cafe, Juhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2E9E8; --surface:#E8DADA; --ink:#2A0F1B; --muted:#6B4A55; --rule:#CDB6BA; --accent:#B4531A; --accent-ink:#fff;
+  --curtain-a:#4A1226; --curtain-b:#33091A; --gold:#F0B24A; --stage:#FFF4DE;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#1A0A11; --surface:#2A121C; --ink:#F3E6E4; --muted:#B99AA2; --rule:#4A2A36; --accent:#F0B24A; --accent-ink:#2A0F1B}
+}
+:root[data-theme="dark"]{--bg:#1A0A11; --surface:#2A121C; --ink:#F3E6E4; --muted:#B99AA2; --rule:#4A2A36; --accent:#F0B24A; --accent-ink:#2A0F1B}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.7 "Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+h1,h2,h3{font-family:"Bodoni Moda",Georgia,"Times New Roman",serif;line-height:1.12;margin:0}
+
+/* Hero: the curtain */
+.hero{position:relative;overflow:hidden;color:var(--stage);text-align:center;padding:72px 22px 84px;
+  background:
+   radial-gradient(ellipse 60% 70% at 50% 0%,rgba(255,222,150,.42),transparent 70%),
+   linear-gradient(180deg,rgba(0,0,0,.35),transparent 30%,rgba(0,0,0,.5)),
+   repeating-linear-gradient(90deg,var(--curtain-a) 0 34px,var(--curtain-b) 34px 68px)}
+.hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:10px;background:var(--gold)}
+.hero p.kicker{margin:0 0 18px;font-weight:500;letter-spacing:.04em;color:var(--gold)}
+.hero h1{font-size:clamp(2.4rem,9vw,5.2rem);font-weight:700;max-width:15ch;margin:0 auto;text-wrap:balance}
+.hero h1 em{font-weight:500}
+.hero .lede{max-width:34rem;margin:22px auto 0;font-size:1.1rem;color:#F1DDD2}
+.meta{margin-top:26px;font-size:.92rem;color:#E7CDBE}
+
+/* Article */
+main{max-width:44rem;margin:0 auto;padding:0 22px 40px}
+section{padding-top:56px}
+h2{font-size:clamp(1.7rem,5vw,2.3rem);margin-bottom:18px;font-weight:700}
+h3{font-size:1.25rem;font-weight:700}
+p{margin:0 0 1.15em}
+.toc{margin:40px 0 0;padding:20px 22px;background:var(--surface);border-left:5px solid var(--accent)}
+.toc b{font-family:"Bodoni Moda",Georgia,serif;font-size:1.15rem}
+.toc ul{margin:10px 0 0;padding-left:1.1em}
+.toc li{margin:4px 0}
+.dropcap:first-letter{font-family:"Bodoni Moda",Georgia,serif;font-weight:700;float:left;font-size:4.4rem;line-height:.8;padding:8px 12px 0 0;color:var(--accent)}
+
+/* Timeline */
+.tl{list-style:none;margin:28px 0 0;padding:0 0 0 26px;border-left:2px solid var(--rule)}
+.tl li{position:relative;padding:0 0 28px}
+.tl li:before{content:"";position:absolute;left:-34px;top:9px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px var(--bg)}
+.tl .when{font-family:"Bodoni Moda",Georgia,serif;font-size:1.7rem;font-weight:700;line-height:1.1}
+.tl p{margin:4px 0 0;color:var(--muted)}
+
+blockquote{margin:44px 0;padding:6px 0 6px 24px;border-left:5px solid var(--gold);font:italic 500 clamp(1.4rem,4.5vw,1.9rem)/1.3 "Bodoni Moda",Georgia,serif}
+
+/* Menu */
+.menu{margin:24px 0 0;padding:0;list-style:none}
+.menu li{padding:20px 0;border-top:1px solid var(--rule)}
+.menu li:last-child{border-bottom:1px solid var(--rule)}
+.row{display:flex;align-items:baseline;gap:10px}
+.row h3{flex:none}
+.row .dots{flex:1;border-bottom:2px dotted var(--rule);transform:translateY(-4px);min-width:20px}
+.price{font-weight:600;font-variant-numeric:tabular-nums;color:var(--accent)}
+.tag{display:inline-block;margin:8px 0 0;padding:2px 10px;font-size:.82rem;font-weight:600;background:var(--accent);color:var(--accent-ink);border-radius:99px}
+.menu p{margin:6px 0 0;color:var(--muted)}
+
+/* Atmosphere list */
+.scenes{display:grid;gap:14px;margin:24px 0 0}
+.scene{padding:18px 20px;background:var(--surface);border-radius:6px}
+.scene h3{font-size:1.1rem;margin-bottom:4px}
+.scene p{margin:0;color:var(--muted);font-size:.98rem}
+@media(min-width:640px){.scenes{grid-template-columns:1fr 1fr 1fr}}
+
+/* Events as ticket stubs */
+.tickets{display:grid;gap:18px;margin-top:24px}
+.ticket{display:grid;grid-template-columns:96px 1fr;background:var(--surface);border-radius:6px;overflow:hidden}
+.stub{background:var(--curtain-a);color:var(--stage);text-align:center;padding:16px 8px;border-right:2px dashed var(--gold);display:flex;flex-direction:column;justify-content:center}
+.stub b{font:700 2.4rem/1 "Bodoni Moda",Georgia,serif;color:var(--gold)}
+.stub span{font-size:.9rem}
+.ticket .body{padding:16px 18px}
+.ticket h3{margin:2px 0 6px}
+.ticket p{margin:0 0 8px;color:var(--muted);font-size:.98rem}
+.ticket .pill{font-size:.84rem;font-weight:600}
+@media(min-width:640px){.tickets{grid-template-columns:1fr 1fr}}
+
+/* Reservation table */
+.tablewrap{overflow-x:auto;margin:22px 0}
+table{border-collapse:collapse;width:100%;min-width:420px}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--rule);font-size:.97rem}
+th{font-weight:600;background:var(--surface)}
+
+.callout{padding:20px 22px;background:var(--surface);border-left:5px solid var(--gold);margin:26px 0}
+.callout b{display:block;margin-bottom:4px}
+.visit{padding:24px;border:2px solid var(--ink);border-radius:6px;margin-top:22px}
+.visit address{font-style:normal;font-weight:600;font-size:1.1rem;margin-bottom:14px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 22px;border-radius:99px;font-weight:600;text-decoration:none;background:var(--accent);color:var(--accent-ink)}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+footer{border-top:1px solid var(--rule);padding:28px 22px;text-align:center;color:var(--muted);font-size:.9rem}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <p class="kicker">Mumbai food and culture</p>
+  <h1>Where the curtain meets <em>the kitchen</em></h1>
+  <p class="lede">A guide to Prithvi Cafe in Juhu: the history behind it, the dishes worth ordering, and how to plan an evening around the stage next door.</p>
+  <p class="meta">Eight-minute read &middot; Updated October 2026</p>
+</header>
+
+<main>
+  <nav class="toc" aria-label="In this post">
+    <b>In this post</b>
+    <ul>
+      <li><a href="#legacy">An artistic legacy</a></li>
+      <li><a href="#menu">The Signature Edit: what to eat</a></li>
+      <li><a href="#atmosphere">Atmosphere of wonder</a></li>
+      <li><a href="#acts">Curated acts: what's on stage</a></li>
+      <li><a href="#book">How to reserve a table</a></li>
+      <li><a href="#visit">Getting there</a></li>
+    </ul>
+  </nav>
+
+  <section>
+    <p class="dropcap">Some cafes are built to sell coffee. Prithvi Cafe was built around an idea: that people who make art, and people who come to watch it, should have somewhere to sit together afterwards. Tucked beside Prithvi Theatre in Juhu, it has been that place for decades, and it still feels more like a green room than a restaurant.</p>
+    <p>Its own tagline says it plainly: <em>where art meets food</em>. This post walks through what that means in practice, from the story that started it to the dishes on the table and the evenings on the calendar.</p>
+  </section>
+
+  <section id="legacy">
+    <h2>An artistic legacy</h2>
+    <p>The cafe grows out of the vision of Prithviraj Kapoor, the pioneer of Indian theatre whose name the whole complex carries. Prithvi Theatre opened in Juhu in 1978, founded by his son Shashi Kapoor and Jennifer Kendal Kapoor, and the cafe has been part of its story ever since. It describes itself as the living heartbeat of Mumbai's theatrical soul, and the three chapters below show how it got there.</p>
+    <ol class="tl">
+      <li><div class="when">1978</div><h3>The curtain rises</h3><p>The foundation of a cultural monument in Juhu.</p></li>
+      <li><div class="when">1990s</div><h3>The cafe culture</h3><p>The space grows into an epicentre of bohemian art, where actors, writers and audiences share tables.</p></li>
+      <li><div class="when">Today</div><h3>The modern stage</h3><p>A sensory fusion of heritage and high-end dining, with the same dedication to the performing arts.</p></li>
+    </ol>
+  </section>
+
+  <blockquote>&ldquo;Art is not what you see, but what you make others see.&rdquo;</blockquote>
+
+  <section id="menu" style="padding-top:8px">
+    <h2>The Signature Edit: what to eat</h2>
+    <p>The menu is short on gimmicks and long on ideas. Three dishes are the ones to start with. Each takes something familiar and gives it a small stage of its own.</p>
+    <ul class="menu">
+      <li>
+        <div class="row"><h3>Pav Bhaji Fondue</h3><span class="dots"></span><span class="price">&#8377;450</span></div>
+        <span class="tag">Iconic</span>
+        <p>A contemporary reimagination of heritage street flavour. If you grew up on Mumbai's pav bhaji, this is the same comfort served as a shared, molten centrepiece.</p>
+      </li>
+      <li>
+        <div class="row"><h3>Chicken Kheema Pav</h3><span class="dots"></span><span class="price">&#8377;525</span></div>
+        <span class="tag">Chef's edit</span>
+        <p>Slow-cooked minced chicken infused with secret theatre spices, served with pav. The kind of dish that rewards a slow second helping.</p>
+      </li>
+      <li>
+        <div class="row"><h3>Alfredo Pasta</h3><span class="dots"></span><span class="price">&#8377;480</span></div>
+        <span class="tag">Popular</span>
+        <p>Velvety white-sauce pasta with a hint of roasted garlic. The easy order for anyone at the table who wants something familiar.</p>
+      </li>
+    </ul>
+    <div class="callout"><b>Ordering tip</b>Share the fondue as an opener, then split one kheema pav and one pasta. That covers street food, spice and comfort for roughly &#8377;1,455 before extras.</div>
+  </section>
+
+  <section id="atmosphere">
+    <h2>Atmosphere of wonder</h2>
+    <p>The food is only half the pitch. The setting does the rest, and it changes noticeably between afternoon and night.</p>
+    <div class="scenes">
+      <div class="scene"><h3>Fairy-lit evenings</h3><p>The outdoor area glows with lights and lanterns after dark, with rustic wooden structures around you.</p></div>
+      <div class="scene"><h3>Theatrical drinks</h3><p>Cocktails are prepared under dramatic lighting, so even the bar feels staged.</p></div>
+      <div class="scene"><h3>Gold-leaf desserts</h3><p>Finish with a decadent dessert, some finished with gold leaf.</p></div>
+    </div>
+    <p style="margin-top:22px">Inside, the theatre's side of the story shows up in vintage posters and plush seating. It reads as lived-in rather than designed, which is the point.</p>
+  </section>
+
+  <section id="acts">
+    <h2>Curated acts: what's on stage</h2>
+    <p>Prithvi publishes a rolling programme, and the listings on the cafe's site give a good sense of the range. Two October evenings stand out. Both are marked <b>secure entry</b>, so plan to arrive early.</p>
+    <div class="tickets">
+      <article class="ticket">
+        <div class="stub"><b>24</b><span>October</span></div>
+        <div class="body"><span class="pill">Drama</span><h3>Shadows of the Past</h3><p>A minimalist dramatic journey exploring Mumbai's forgotten heritage through poetic movement.</p></div>
+      </article>
+      <article class="ticket">
+        <div class="stub"><b>27</b><span>October</span></div>
+        <div class="body"><span class="pill">Acoustic</span><h3>Soulful Nights</h3><p>Unplugged sessions with independent artists in an intimate, candlelit garden.</p></div>
+      </article>
+    </div>
+    <p style="margin-top:22px">Pair a dinner reservation with a show and you get the full Prithvi evening: food first, then the performance, then one more drink while the crowd talks it through.</p>
+  </section>
+
+  <section id="book">
+    <h2>How to reserve a table</h2>
+    <p>The cafe takes reservations through a simple form on its website: pick your guest count, date and time, and confirm. Here is what is on offer.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Party size</th><th>Good for</th></tr></thead>
+        <tbody>
+          <tr><td>2 guests</td><td>A date or a catch-up before a show</td></tr>
+          <tr><td>4 guests</td><td>Friends sharing the signature dishes</td></tr>
+          <tr><td>6 guests</td><td>Small group celebrations</td></tr>
+          <tr><td>Exclusive party (8+)</td><td>Large groups and special occasions</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout"><b>Be on time</b>Reservations are held for 15 minutes past the scheduled time. If you are going to a show, book the table for well before curtain time.</div>
+  </section>
+
+  <section id="visit">
+    <h2>Getting there</h2>
+    <p>Prithvi sits on a quiet lane in Juhu, next to the theatre it grew up with.</p>
+    <div class="visit">
+      <address>20 Janki Kutir, Juhu Church Road,<br>Mumbai 400049</address>
+      <div class="btns">
+        <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Prithvi%20Cafe%20Apartment%2C%20Alongside%20Prithvi%20Theatre%2C%2020%2C%20Juhu%20Rd%2C%20Janki%20Kutir%2C%20Juhu%2C%20Mumbai%2C%20Maharashtra%20400049" target="_blank" rel="noopener">Get directions</a>
+        <a class="btn alt" href="https://prithvi-cafe.vercel.app/#reservation" target="_blank" rel="noopener">Reserve a table</a>
+        <a class="btn alt" href="https://www.instagram.com/prithvicafe.official/" target="_blank" rel="noopener">Follow on Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The verdict</h2>
+    <p>Prithvi Cafe works because it never tries to separate the meal from the memory. You come for a fondue or a plate of kheema pav, and you leave having sat inside a piece of Mumbai's cultural history. Book a table, check the programme, and let the evening run long.</p>
+  </section>
+</main>
+
+<footer>&copy; Prithvi Theatre &amp; Cafe. An artistic legacy since 1978.<br>Menu prices and event dates are from the cafe's website. Confirm details with the cafe before you go.</footer>
+
+</body>
+</html>
